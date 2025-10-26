@@ -4,10 +4,14 @@ class Solution:
 
         ret = []
         for i in intervals:
-            if not ret or ret[-1][-1] <= i[0]:
+            if not ret:
                 ret.append(i)
-            
-            else:
-                continue
+            if ret[-1][-1] <= i[0]:
+                if ret[-1][-1] > i[-1]:
+                    ret.pop()
+                    ret.append(i)
+                else:
+                    ret.append(i)
+
             
         return len(intervals) - len(ret)
