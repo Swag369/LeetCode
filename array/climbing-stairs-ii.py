@@ -25,6 +25,6 @@ class Solution:
         for i in range(n-4, -1, -1):
             dp[i] = min(dp[i+3] + cost(i+3, i), dp[i+2] + cost(i+2, i), dp[i+1] + cost(i+1, i))
         
-        print(costs)
-        print(dp)
+        # print(costs)
+        # print(dp)
         return dp[0]
