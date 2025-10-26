@@ -26,6 +26,8 @@ class Solution:
         for i in range (len(s1) , len(s2)):
             # i is cur letter newly added
             # i - len(s1) is cur letter now removed
+            if c == cref:
+                return True
 
             c[s2[i]] += 1
             c[s2[i-len(s1)]] -= 1
@@ -34,7 +36,7 @@ class Solution:
 
             # print("comparing", c ,cref, "at", i)
 
-            if c == cref:
-                return True
-        
+
+        if c == cref:
+            return True
         return False
