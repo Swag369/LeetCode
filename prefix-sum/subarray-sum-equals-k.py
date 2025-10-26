@@ -13,10 +13,6 @@ class Solution:
         seen_prefixes = dict()
 
         for i in prefix:
-            if i in seen_prefixes:
-                seen_prefixes[i] += 1
-            else:
-                seen_prefixes[i] = 1
 
             if i == k:
                 count += 1
@@ -25,6 +21,11 @@ class Solution:
 
             if required_removal in seen_prefixes:
                 count += seen_prefixes[required_removal]
+
+            if i in seen_prefixes:
+                seen_prefixes[i] += 1
+            else:
+                seen_prefixes[i] = 1
             
         
         return count
