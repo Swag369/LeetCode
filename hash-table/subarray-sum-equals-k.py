@@ -2,17 +2,41 @@ class Solution:
     def subarraySum(self, nums: List[int], k: int) -> int:
 
         count = 0
-        cursum = 0
 
-        prefix = [nums[0]]
+        # prefix = [nums[0]]
 
-        for i in nums[1:]:
-            prefix.append(prefix[-1] + i)
+        # for i in nums[1:]:
+        #     prefix.append(prefix[-1] + i)
 
 
+        # seen_prefixes = dict()
+
+        # for i in prefix:
+
+        #     if i == k:
+        #         count += 1
+            
+        #     required_removal = (i - k)
+
+        #     if required_removal in seen_prefixes:
+        #         count += seen_prefixes[required_removal]
+
+        #     if i in seen_prefixes:
+        #         seen_prefixes[i] += 1
+        #     else:
+        #         seen_prefixes[i] = 1
+            
+        
+        # return count
+
+
+        cur_sum = 0
         seen_prefixes = dict()
+        i = 0
 
-        for i in prefix:
+        for j in nums:
+
+            i += j 
 
             if i == k:
                 count += 1
@@ -29,7 +53,6 @@ class Solution:
             
         
         return count
-
 
 
 
